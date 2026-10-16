@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ctftools"
+version = "0.1.0"
+description = "A toolkit for binary exploitation in CTFs: triage, offset discovery, ROP, leaks and payload generation."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+dependencies = [
+    "pwntools>=4.11",
+]
+
+[project.optional-dependencies]
+symbolic = ["angr>=9.2"]
+dev = ["pytest>=7"]
+
+[project.scripts]
+ctftools = "ctftools.cli:main"
+pwnscan = "ctftools.tools.pwnscan:main"
+pwngen = "ctftools.tools.pwngen:main"
+vulnhunt = "ctftools.tools.vulnhunt:main"
+fuzzlite = "ctftools.tools.fuzzlite:main"
+seccompview = "ctftools.tools.seccompview:main"
+gadgetfind = "ctftools.tools.gadgetfind:main"
+ropchain = "ctftools.tools.ropchain:main"
+sropkit = "ctftools.tools.sropkit:main"
+shellgen = "ctftools.tools.shellgen:main"
+pwninit-lite = "ctftools.tools.pwninit_lite:main"
+fmtool = "ctftools.tools.fmtool:main"
+canbrute = "ctftools.tools.canbrute:main"
+stackviz = "ctftools.tools.stackviz:main"
+heapscope = "ctftools.tools.heapscope:main"
+symwin = "ctftools.tools.symwin:main"
+pwnrun = "ctftools.tools.pwnrun:main"
+
+[tool.setuptools.packages.find]
+include = ["ctftools*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

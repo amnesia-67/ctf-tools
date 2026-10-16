@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+/core
+/core.*
+tests/vulnerable/core
+
+# compiled test targets: keep the sources, ignore what gcc produces
+tests/vulnerable/*
+!tests/vulnerable/*.c
+!tests/vulnerable/Makefile
